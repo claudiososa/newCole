@@ -33,7 +33,7 @@
       </li>
     </ul>
   </div>
-@else
+@elseif  (Auth::user()->type=='admin')
   <div class="btn-group">
     <button id="header-top-drop-2" type="button" class="btn dropdown-toggle btn-default btn-sm dropdown-toggle--no-caret"
     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock pr-2"></i>  {{ Auth::user()->name }} <span class="caret"></span></button>
@@ -62,4 +62,35 @@
 {{-- <div class="btn-group">
   <a href="page-signup.html" class="btn btn-default btn-sm"><i class="fa fa-user pr-2"></i> Sign Up</a>
 </div> --}}
+@else
+  <div class="btn-group">
+    <button id="header-top-drop-2" type="button" class="btn dropdown-toggle btn-default btn-sm dropdown-toggle--no-caret"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock pr-2"></i>  {{ Auth::user()->name }} <span class="caret"></span></button>
+    <ul class="dropdown-menu dropdown-menu-right dropdown-animation" aria-labelledby="header-top-drop-2">
+      <li class="dropdown">
+                  <a href="{{ route('administrator') }}">
+                      Cambiar contraseña
+                  </a>
+      </li>
+      <li class="dropdown">
+                  <a href="{{ route('administrator') }}">
+                      Mi Perfil
+                  </a>
+      </li>
+      <li class="dropdown">
+                  <a href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                      Salir
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+
+
+      </li>
+
+    </ul>
+    </div>
 @endif
