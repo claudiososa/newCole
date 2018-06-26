@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Publication;
-use App\Image;
+use App\Picture;
 use App\File;
 use App\Category;
 use App\Http\Requests\CreatePublicationRequest;
 use App\Http\Requests\UpdatePublicationRequest;
+use Intervention\Image\Facades\Image;
 
 class HomeController extends Controller
 {
@@ -51,6 +52,7 @@ class HomeController extends Controller
       $publication = Publication::create([
         'category_id' =>$request->input('category_id'),
         'user_id' =>$user->id,
+        'album_id' =>$request->input('album_id'),
         'title' =>$request->input('title'),
         'content' =>$request->input('content'),
         'statusNew' =>'despublicado'
@@ -58,27 +60,40 @@ class HomeController extends Controller
 
       $img = $request->file('input-img');
 
-      $image = Image::create([
+      $imge = $img->store('images','public');
+
+      $name = substr($imge,7,strpos($imge,'.jpeg')-7).'500x281.jpeg';
+
+      $imageLittle = Image::make($img)->resize(500, 281)->save('storage/images/'.$name);
+      //$imageLittle = Image::make(Input::file('image'))->resize(500, 281)->save('storage/images/'.$name);
+
+      $image = Picture::create([
         'publication_id'=>$publication->id,
-        'name' =>$img->store('images','public'),
+        'name' =>$imge,
         'type'=>'n'
       ]);
 
-      $file = $request->file('input-file');
+      //dd($request->file('input-file'));
+      if ($request->file('input-file')) {
+        $file = $request->file('input-file');
 
-      $fileA = File::create([
-        'publication_id'=>$publication->id,
-        'name' =>$file->store('files','public'),
-        'type'=>'n'
-      ]);
+        $fileA = File::create([
+          'publication_id'=>$publication->id,
+          'name' =>$file->store('files','public'),
+          'type'=>'n'
+        ]);
+      }
 
-      $file1 = $request->file('input-file1');
+      if ($request->file('input-file1')) {
+        $file1 = $request->file('input-file1');
 
-      $fileA1 = File::create([
-        'publication_id'=>$publication->id,
-        'name' =>$file1->store('files','public'),
-        'type'=>'n'
-      ]);
+        $fileA1 = File::create([
+          'publication_id'=>$publication->id,
+          'name' =>$file1->store('files','public'),
+          'type'=>'n'
+        ]);
+      }
+
       return redirect('home');
     }
 
@@ -99,10 +114,12 @@ class HomeController extends Controller
       //dd($request);
       $publication = Publication::find($request->input('publication_id'));
 
+      $publication->album_id=$request->input('album_id');
       $publication->category_id=$request->input('category_id');
       $publication->id=$request->input('publication_id');
       $publication->user_id=$user->id;
       $publication->title=$request->input('title');
+      $publication->album_id=$request->input('album_id');
       $publication->content=$request->input('content');
       $publication->statusNew=$request->input('statusNew');
       //$publication->statusNew=$request->input('status');

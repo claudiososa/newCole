@@ -43,7 +43,7 @@
               data-transform_in="x:[50%];o:0;s:600;e:Power4.easeInOut;"
               data-transform_out="x:[-50%];o:0;s:200;e:Power2.easeInOut;"
               data-mask_in="x:0;y:0;s:inherit;e:inherit;"
-              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;">Inspiration
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;">Inspiración
             </div>
 
             <!-- LAYER NR. 2 -->
@@ -60,7 +60,7 @@
               data-transform_in="x:[-50%];o:0;s:600;e:Power4.easeInOut;"
               data-transform_out="x:[-50%];o:0;s:200;e:Power2.easeInOut;"
               data-mask_in="x:0;y:0;s:inherit;e:inherit;"
-              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;">Innovation
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;">Innovación
             </div>
 
             <!-- LAYER NR. 3 -->
@@ -89,7 +89,7 @@
               data-transform_in="y:[-100%];sX:1;sY:1;o:0;s:1100;e:Power4.easeInOut;"
               data-transform_out="y:0;s:1000;e:Power2.easeInOut;"
               data-mask_in="x:0px;y:[-100%];s:inherit;e:inherit;"
-              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="logo-font">The <span class="text-default">Project</span></span> <br> Powerful Bootstrap Template
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="logo-font">Copef <span class="text-default">Salta</span></span> <br> Powerful Bootstrap Template
             </div>
 
             <!-- LAYER NR. 5 -->
@@ -195,7 +195,7 @@
               data-transform_in="y:[100%];sX:1;sY:1;o:0;s:1100;e:Power4.easeInOut;"
               data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;"
               data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="logo-font">The Project</span> <br> Premium HTML5 Bootstrap Theme
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="logo-font">Copef Salta</span> <br> Premium HTML5 Bootstrap Theme
             </div>
 
             <!-- LAYER NR. 2 -->

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddKeyForeingToImages extends Migration
+class AddKeyForeingToPictures extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddKeyForeingToImages extends Migration
      */
     public function up()
     {
-        Schema::table('images', function(Blueprint $table){
+        Schema::table('pictures', function(Blueprint $table){
           $table->foreign('publication_id')->references('id')->on('publications');
           //$table->foreign('newId')->references('id')->on('news');
         });
@@ -26,8 +26,8 @@ class AddKeyForeingToImages extends Migration
      */
     public function down()
     {
-        Schema::table('images', function (Blueprint $table){
-          $table->dropForeign('images_publication_id_foreign');
+        Schema::table('pictures', function (Blueprint $table){
+          $table->dropForeign('pictures_publication_id_foreign');
         });
     }
 }

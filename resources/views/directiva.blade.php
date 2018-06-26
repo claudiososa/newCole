@@ -1,0 +1,10 @@
+@extends('layouts.app')
+@section('formLogin')
+  @include('auth.formLogin')
+@endsection
+@section('mainNavigation')
+  @include('navigations.main')
+@endsection
+@section('section')
+  @include('sections.directiva')
+@endsection

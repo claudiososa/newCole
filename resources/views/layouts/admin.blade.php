@@ -64,6 +64,11 @@
                                 <i class="icon-flag3"></i>
                                 <span class="nav-text">Nueva Publicacion</span></a>
                         </li>
+                        <li>
+                            <a href="{{route('gallery')}}">
+                                <i class="icon-flag3"></i>
+                                <span class="nav-text">Galeria de Fotos</span></a>
+                        </li>
 
 
 

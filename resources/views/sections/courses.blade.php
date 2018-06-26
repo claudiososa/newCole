@@ -23,53 +23,66 @@
 
         <!-- page-title start -->
         <!-- ================ -->
-        <h1 class="page-title">Cursos de Capacitación</h1>
+        <h3 class="page-title">Cursos de Capacitación</h3>
         <div class="separator-2"></div>
         <!-- page-title end -->
         <!-- blogpost start -->
         <article class="blogpost">
-          @forelse ($publications as $publication)
-            <div class="row grid-space-10">
-              <div class="col-lg-6">
-                <div class="overlay-container">
-                  @foreach ($publication->image as $image)
-                    <img src="{{Storage::disk('public')->url($image->name)}}" alt="">
-                  @endforeach                  
-                  <a class="overlay-link" href="blog-post.html"><i class="fa fa-link"></i></a>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <header>
-                  <h2><a href="blog-post.html">{{$publication->title}}</a></h2>
-                  <div class="post-info">
-                    <span class="post-date">
-                      <i class="fa fa-calendar-o pr-1"></i>
-                      <span class="day">09</span>
-                      <span class="month">May 2017</span>
-                    </span>
-                    <span class="submitted"><i class="fa fa-user pr-1 pl-1"></i> by <a href="#">John Doe</a></span>
-                    <span class="comments"><i class="fa fa-comments-o pl-1 pr-1"></i> <a href="#">22 comments</a></span>
-                  </div>
-                </header>
-                <div class="blogpost-content">
-                  <p>Mauris dolor sapien, malesuada at interdum ut, hendrerit eget lorem. Nunc interdum mi neque, et  sollicitudin purus fermentum ut. Suspendisse faucibus nibh odio, a vehicula eros pharetra in. Maecenas  ullamcorper commodo rutrum. In iaculis lectus vel augue eleifend dignissim.</p>
-                </div>
-              </div>
+        @forelse ($publications as $publication)
+          <div class="overlay-container">
+            @foreach ($publication->picture as $picture)
+              <img src="{{Storage::disk('public')->url($picture->name)}}" alt="">
+            @endforeach
+            <a class="overlay-link" href="blog-post.html"><i class="fa fa-link"></i></a>
+          </div>
+          <header>
+            <h2><a href="{{route('curso', ['id' => $publication->id])}}">{{$publication->title}}</a></h2>
+            <div class="post-info">
+              <span class="post-date">
+                <i class="fa fa-calendar-o pr-1"></i>
+                <span class="day">{{ucwords($publication->created_at->format('l'))}}
+                  {{$publication->created_at->format('d')}}
+                  {{ucwords($publication->created_at->format('F '))}}de
+                  {{ucwords($publication->created_at->format(' Y'))}}
+                </span>
+              </span>
+              <span class="submitted"><i class="fa fa-user pr-1 pl-1"></i> by <a href="#">John Doe</a></span>
+              <span class="comments"><i class="fa fa-comments-o pl-1 pr-1"></i> <a href="#">22 comments</a></span>
             </div>
-            <footer class="clearfix">
-              <div class="tags pull-left"><i class="fa fa-tags pr-1"></i> <a href="#">tag 1</a>, <a href="#">tag 2</a>, <a href="#">long tag 3</a></div>
-              <div class="link pull-right"><i class="fa fa-link pr-1"></i><a href="#">Read More</a></div>
-            </footer>
-          @empty
+          </header>
+          <div class="blogpost-content">
+              <p><?php echo substr($publication->content,0,250)."..." ?></p>
+          </div>
+          <footer class="clearfix">
+            <div class="tags pull-left"><i class="fa fa-tags pr-1"></i> <a href="#">tag 1</a>, <a href="#">tag 2</a>, <a href="#">long tag 3</a></div>
+            <div class="link pull-right"><i class="fa fa-link pr-1"></i><a href="{{route('curso', ['id' => $publication->id])}}">Leer más</a></div>
+          </footer>
 
-          @endforelse
+        @empty
+
+        @endforelse
+
 
         </article>
         <!-- blogpost end -->
 
 
         <!-- pagination start -->
+
         <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              @if(count($publications))
+                    {{-- <div class="mt-2 mx-auto"> --}}
+                        {{$publications->links('pagination::bootstrap-4')}}
+                    {{-- </div> --}}
+              @endif
+            </li>
+          </ul>
+        </nav>
+
+
+        {{-- <nav aria-label="Page navigation">
           <ul class="pagination justify-content-center">
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Previous">
@@ -89,7 +102,7 @@
               </a>
             </li>
           </ul>
-        </nav>
+        </nav> --}}
         <!-- pagination end -->
       </div>
       <!-- main end -->
@@ -107,20 +120,17 @@
             </form>
           </div>
           <div class="block clearfix">
-            <h3 class="title">Testimonial</h3>
+            <h3 class="title">Formación permanente</h3>
             <div class="separator-2"></div>
-            <blockquote class="margin-clear">
-              <p>Reprehenderit, nihil magni odit ducimus, ab animi eaque vel excepturi, incidunt.</p>
-              <footer><cite title="Source Title">Someone Famous </cite></footer>
-            </blockquote>
-            <blockquote class="margin-clear">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem.</p>
-              <footer><cite title="Source Title">Steve Doe </cite></footer>
-            </blockquote>
-          </div>
+
+              <p>En la actualidad la capacitación es la respuesta a la necesidad que tienen las empresas o instituciones de contar
+                con un personal calificado y productivo, es el desarrollo de tareas con el fin de mejorar el rendimiento productivo,
+                al elevar la capacidad de los trabajadores mediante la mejora de las habilidades</p>
+            </div>
           <div class="block clearfix">
-            <h3 class="title">Latest News</h3>
+            <h3 class="title">Últimas novedades</h3>
             <div class="separator-2"></div>
+
             <div class="media margin-clear">
               <div class="d-flex pr-2">
                 <div class="overlay-container">
@@ -134,44 +144,7 @@
               </div>
             </div>
             <hr>
-            <div class="media margin-clear">
-              <div class="d-flex pr-2">
-                <div class="overlay-container">
-                  <img class="media-object" src="images/blog-thumb-2.jpg" alt="blog-thumb">
-                  <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
-                </div>
-              </div>
-              <div class="media-body">
-                <h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
-                <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 22, 2017</p>
-              </div>
-            </div>
-            <hr>
-            <div class="media margin-clear">
-              <div class="d-flex pr-2">
-                <div class="overlay-container">
-                  <img class="media-object" src="images/blog-thumb-3.jpg" alt="blog-thumb">
-                  <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
-                </div>
-              </div>
-              <div class="media-body">
-                <h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
-                <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 21, 2017</p>
-              </div>
-            </div>
-            <hr>
-            <div class="media margin-clear">
-              <div class="d-flex pr-2">
-                <div class="overlay-container">
-                  <img class="media-object" src="images/blog-thumb-4.jpg" alt="blog-thumb">
-                  <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
-                </div>
-              </div>
-              <div class="media-body">
-                <h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
-                <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 21, 2017</p>
-              </div>
-            </div>
+                    
             <div class="text-right space-top">
               <a href="blog-large-image-right-sidebar.html" class="link-dark"><i class="fa fa-plus-circle pl-1 pr-1"></i>More</a>
             </div>

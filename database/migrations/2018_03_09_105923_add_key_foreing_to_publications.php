@@ -30,6 +30,7 @@ class AddKeyForeingToPublications extends Migration
         Schema::table('publications', function (Blueprint $table){
           $table->dropForeign('publications_category_id_foreign');
           $table->dropForeign('publications_user_id_foreign');
+
         });
     }
 }

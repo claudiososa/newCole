@@ -17,6 +17,7 @@ class CreatePublicationsTable extends Migration
           $table->increments('id');
           $table->integer('category_id')->unsigned();
           $table->integer('user_id')->unsigned();
+          $table->integer('album_id')->unsigned();
           $table->string('title');
           $table->text('content');
           $table->string('statusNew',15);

@@ -36,6 +36,28 @@
         @endif
       </div>
 
+      <div class="form-group @if($errors->has('album_id')) has-danger @endif">
+        <label for="category_id">Album</label>
+        <select class="form-control" name="album_id">
+          @foreach ($albums as $album)
+            @if ($album->id==$publication->album_id)
+              <option selected value="{{$album->id}}">{{$album->name}}</option>
+            @else
+              <option value="{{$album->id}}">{{$album->name}}</option>
+            @endif
+          @endforeach
+        </select>
+      </div>
+
+      {{-- <div class="form-group @if($errors->has('album_id')) has-danger @endif">
+        <label for="album_id">Album</label>
+        <select class="form-control" name="album_id">
+          @foreach ($albums as $album)
+            <option value="{{$album->id}}">{{$album->name}}</option>
+          @endforeach
+        </select>
+      </div> --}}
+
       <div class="form-group @if($errors->has('category_id')) has-danger @endif">
         <label for="category_id">Categoria</label>
         <select class="form-control" name="category_id">
