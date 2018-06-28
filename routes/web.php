@@ -21,6 +21,7 @@ Route::get('/','PagesController@welcome')->name('welcome');
 // Route::get('/capacitacion', function () {
 //     return view('courses');
 // });
+Route::resource('/users', 'Users');
 
 Route::get('/fotos','AlbumsController@getAlbums')->name('photos');
 Route::get('/galeria','AlbumsController@getList')->name('gallery');
