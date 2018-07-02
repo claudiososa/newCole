@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Profile;
+use DB;
+//use Hash;
+
 class Users extends Controller
 {
     /**
@@ -14,7 +18,7 @@ class Users extends Controller
      */
     public function index()
     {
-      $users = User::all();
+      $users = User::paginate(2);
 
       return view('users/users', ['users' => $users]);
     }
@@ -40,15 +44,30 @@ class Users extends Controller
       $name = $request->input('name');
       $password = $request->input('password');
       $email = $request->input('email');
+      $dni = $request->input('dni');
+      $status = $request->input('status');
+      $type = $request->input('type');
+      $surname = $request->input('surname');
+      $phone = $request->input('phone');
+      $address = $request->input('address');
 
-      $hash_password = Hash::make($password);
+      //$hash_password = Hash::make($password);
 
-      User::create([
+      $userAdd = User::create([
           'name' => $name,
-          'password' => $hash_password,
-          'email' => $email
+          'password' => bcrypt($request->input('password')),
+          'email' => $email,
+          'dni'=>$dni,
+          'type'=>$type,
+          'status'=>$status
       ]);
-
+      //dd($userId);
+      Profile::create([
+        'user_id'=>$userAdd->id,
+        'surname'=>$surname,
+        'phone'=>$phone,
+        'address'=>$address
+      ]);
       return redirect('/users');
     }
 
@@ -85,16 +104,40 @@ class Users extends Controller
     {
       $name = $request->input('name');
       $email = $request->input('email');
+      $dni = $request->input('dni');
+
+      $surname = $request->input('surname');
+      $phone = $request->input('phone');
+      $address = $request->input('address');
 
       $password = $request->input('password');
 
-      $hash_password = Hash::make($password);
+      if ($password=="") {
+        User::where('id', $id)->update([
+            'name' => $name,
+            'email' => $email,
+            'dni' => $dni
+        ]);
 
-      User::where('id', $id)->update([
-          'name' => $name,
-          'password' => $hash_password,
-          'email' => $email
+      }else{
+
+        $hash_password = Hash::make($password);
+        User::where('id', $id)->update([
+            'name' => $name,
+            'password' => bcrypt($request->input('password')),
+            // 'password' => $hash_password,
+            'email' => $email,
+            'dni' => $dni,
+
+        ]);
+
+      }
+      Profile::where('user_id',$id)->update([
+        'phone' => $phone,
+        'address' => $address,
+        'surname'=> $surname
       ]);
+
 
       return redirect('/users');
     }

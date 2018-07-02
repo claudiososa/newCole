@@ -69,6 +69,11 @@
                                 <i class="icon-flag3"></i>
                                 <span class="nav-text">Galeria de Fotos</span></a>
                         </li>
+                        <li>
+                            <a href="/users">
+                                <i class="icon-flag3"></i>
+                                <span class="nav-text">Administrar Usuarios</span></a>
+                        </li>
 
 
 

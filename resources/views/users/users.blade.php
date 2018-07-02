@@ -7,9 +7,11 @@
 				<thead>
 					<tr>
 						<th>Id</th>
-						<th>User</th>
-						<th>Password</th>
+						<th>Nombre</th>
 						<th>Email</th>
+						<th>DNI</th>
+						<th>Tipo</th>
+						<th>Estado</th>
 						<th>Profile</th>
 						<th>Destroy</th>
 					</tr>
@@ -28,15 +30,24 @@
 								</th>
 
 								<th>
-									{{ $user->password }}
-								</th>
-
-								<th>
 									{{ $user->email }}
 								</th>
 
 								<th>
-									<a href="/users/{{ $user->id}}">View Profile</a>
+									{{ $user->dni }}
+								</th>
+
+								<th>
+									{{ $user->type }}
+								</th>
+
+								<th>
+									{{ $user->status }}
+								</th>
+
+
+								<th>
+									<a href="/users/{{ $user->id}}/edit">Editar</a>
 								</th>
 
 								<th>
@@ -55,6 +66,9 @@
 					@endforeach
 				</tbody>
 			</table>
+			<div class="mt-2 mx-auto">
+					{{$users->links('pagination::bootstrap-4')}}
+			</div>
 
 			<a href="{{ url('users/create') }}">Create new user</a>
 
