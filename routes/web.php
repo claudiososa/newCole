@@ -21,6 +21,12 @@ Route::get('/','PagesController@welcome')->name('welcome');
 // Route::get('/capacitacion', function () {
 //     return view('courses');
 // });
+Route::get('/update/password/{id}','UserController@editPassword');
+Route::post('/update/password','UserController@updatePassword');
+Route::post('/searchUser','UserController@searchUser')->name('searchUser');
+// Route::post('/searchXSurname','UserController@searchXSurname')->name('searchSurname');
+// Route::post('/searchXName','UserController@searchXName')->name('searchName');
+
 Route::resource('/users', 'Users');
 
 Route::get('/fotos','AlbumsController@getAlbums')->name('photos');
@@ -37,6 +43,7 @@ Route::get('/deleteimage/{id}','ImagesController@getDelete')->name('deleteImage'
 Route::post('/moveimage', array('as' => 'move_image','uses' => 'ImagesController@postMove'));
 
 
+Route::get('/exclusive','NavController@exclusive')->middleware('UserStatus')->name('exclusive');
 
 Route::get('/capacitacion','NavController@courses')->name('courses');
 Route::get('/noticias','NavController@news')->name('news');

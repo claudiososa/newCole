@@ -33,7 +33,7 @@
           <h3>Contenido exclusivo</h3>
           <div class="separator clearfix"></div>
           <p>Inventore dolores aut laboriosam cum consequuntur delectus sequi lorem ipsum dolor sit amet, consectetur.</p>
-          <a href="page-services.html">Leer más <i class="pl-1 fa fa-angle-double-right"></i></a>
+          <a href="{{route('exclusive')}}">Leer más <i class="pl-1 fa fa-angle-double-right"></i></a>
         </div>
       </div>
     </div>

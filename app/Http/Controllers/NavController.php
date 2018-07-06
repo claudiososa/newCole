@@ -17,6 +17,15 @@ class NavController extends Controller
       ]);
     }
 
+    public function exclusive()
+    {
+      $publications = Publication::where('id','>',0)->where('category_id','=',6)->orderBy('id','DESC')->paginate(3);
+      //dd($publications);
+      return view('exclusive',[
+        'publications'=>$publications
+      ]);
+    }
+
     public function news()
     {
       $publications = Publication::where('id','>',0)

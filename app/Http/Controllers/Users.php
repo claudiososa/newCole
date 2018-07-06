@@ -18,8 +18,9 @@ class Users extends Controller
      */
     public function index()
     {
-      $users = User::paginate(2);
-
+      //$users = Profile::where('id','>', '0')->with('user')->paginate(2);
+      $users = User::with('profile')->paginate(3);
+      //dd($users);
       return view('users/users', ['users' => $users]);
     }
 
@@ -55,11 +56,12 @@ class Users extends Controller
 
       $userAdd = User::create([
           'name' => $name,
-          'password' => bcrypt($request->input('password')),
+          'password' => bcrypt($request->input('dni')),
           'email' => $email,
           'dni'=>$dni,
           'type'=>$type,
-          'status'=>$status
+          'status'=>$status,
+          'remember_token' => str_random(10),
       ]);
       //dd($userId);
       Profile::create([
@@ -93,6 +95,26 @@ class Users extends Controller
       return view('users/edit', ['users' => User::findOrFail($id)]);
     }
 
+
+    public function editPassword($id)
+    {
+      return view('users/editPassword', ['users' => User::findOrFail($id)]);
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+      dd($request);
+      if ($request->input('password')=="") {
+        return redirect('/users');
+      }else{
+        User::where('id', $id)->update([
+            'password' => bcrypt($request->input('password')),
+            'remember_token' => str_random(20),
+        ]);
+      }
+      //return redirect('/users');
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -105,23 +127,26 @@ class Users extends Controller
       $name = $request->input('name');
       $email = $request->input('email');
       $dni = $request->input('dni');
+      $status = $request->input('status');
+      $type = $request->input('type');
 
       $surname = $request->input('surname');
       $phone = $request->input('phone');
       $address = $request->input('address');
-
       $password = $request->input('password');
 
       if ($password=="") {
         User::where('id', $id)->update([
             'name' => $name,
             'email' => $email,
-            'dni' => $dni
+            'dni' => $dni,
+            'type'=>$type,
+            'status'=>$status,
         ]);
 
       }else{
 
-        $hash_password = Hash::make($password);
+        //$hash_password = Hash::make($password);
         User::where('id', $id)->update([
             'name' => $name,
             'password' => bcrypt($request->input('password')),
