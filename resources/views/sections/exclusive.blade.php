@@ -23,7 +23,7 @@
 
         <!-- page-title start -->
         <!-- ================ -->
-        <h3 class="page-title">Cursos de Capacitación</h3>
+        <h3 class="page-title">Contenido Exclusivo</h3>
         <div class="separator-2"></div>
         <!-- page-title end -->
         <!-- blogpost start -->

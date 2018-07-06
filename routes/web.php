@@ -44,6 +44,9 @@ Route::post('/moveimage', array('as' => 'move_image','uses' => 'ImagesController
 
 
 Route::get('/exclusive','NavController@exclusive')->middleware('UserStatus')->name('exclusive');
+Route::get('/inactive',function(){
+  return view('inactive');
+});
 
 Route::get('/capacitacion','NavController@courses')->name('courses');
 Route::get('/noticias','NavController@news')->name('news');

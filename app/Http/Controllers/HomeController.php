@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Publication;
 use App\Picture;
+use App\Album;
 use App\File;
 use App\Category;
 use App\Http\Requests\CreatePublicationRequest;
@@ -101,9 +102,11 @@ class HomeController extends Controller
     {
       //dd($publication);
       $categories = Category::all();
+      $albums = Album::all();
       return view('admin.editPublication',[
         'publication'=>$publication,
         'categories'=>$categories,
+        'albums'=>$albums,
       ]);
     }
 

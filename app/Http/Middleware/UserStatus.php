@@ -2,7 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Contracts\Auth\Guard;
 use Closure;
+use Session;
 
 class UserStatus
 {
@@ -13,11 +15,18 @@ class UserStatus
      * @param  \Closure  $next
      * @return mixed
      */
+    protected $auth;
+
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     public function handle($request, Closure $next)
     {
       //dd($request);
-      if ($request->status == 'Inactivo') {
-        dd($request);
+      if ($this->auth->user()->status == 'Inactivo') {
+        //dd($request);
         return redirect('inactive');
       }
 
