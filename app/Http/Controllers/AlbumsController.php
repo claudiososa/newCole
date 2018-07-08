@@ -23,7 +23,7 @@ class AlbumsController extends Controller
 
   public function getAlbums()
   {
-    $albums = Album::with('Photos')->paginate(3);
+    $albums = Album::where('id','>','1')->with('Photos')->paginate(3);
     //return View::make('index')
     //->with('albums',$albums);
     return view('galleryPhotos',[

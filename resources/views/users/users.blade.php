@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+	<a class='btn btn-primary' href="{{ url('users/create') }}">Crear nuevo usuario</a>
 
 	<div class="container">
 			<div class="navbar navbar-expand-lg">
@@ -23,17 +24,10 @@
 			</div>
 	</div>
 
-	{{-- <div class="container">
-		<form action="{{route('searchUser')}}" class="form-inline my-2 my-lg-0" method="post">
-			{{csrf_field()}}
-				<input name="dni" class="form-control mr-sm-2" type="text" placeholder="Buscar Usuario DNI...">
-				<input name="surname" class="form-control mr-sm-2" type="text" placeholder="Buscar Usuario Apellido...">
-				<input name="name" class="form-control mr-sm-2" type="text" placeholder="Buscar Usuario Nombre...">
-				<button class="icon-search" type="submit"><i class="ion-ios-search-strong"></i></button>
-		</form>
-	</div> --}}
-
 	</div>
+
+
+
 	<div class="columns">
 		<div class="column is-10 is-offset-1">
 			<table class="table is-striped">
@@ -111,8 +105,6 @@
 			<div class="mt-2 mx-auto">
 					{{$users->links('pagination::bootstrap-4')}}
 			</div>
-
-			<a href="{{ url('users/create') }}">Create new user</a>
 
 		</div>
 	</div>

@@ -1,5 +1,5 @@
 <div class="container">
-   <a href="{{route('createAlbum')}}">Crear Nuevo Album</a>
+   <a class="btn btn-primary" href="{{route('createAlbum')}}">Crear Nuevo Album</a>
 </div>
 <div class="container">
   @forelse($albums as $album)

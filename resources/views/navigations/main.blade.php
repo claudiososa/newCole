@@ -54,6 +54,7 @@
             <li ><a href="{{route('pagina',['id' => 28])}}">Historia</a></li>
             <li ><a href="{{route('directivas')}}">Comisión Directiva</a></li>
             <li ><a href="{{route('pagina',['id' => 30])}}">Matrícula</a></li>
+            <li ><a href="{{route('photos')}}" >Galería de fotos</a></li>
           </ul>
         </li>
 
@@ -64,7 +65,11 @@
         <li class="nav-item">
           <a href="{{route('news')}}" class="nav-link">Noticias</a>
         </li>
-    
+
+        {{-- <li class="nav-item">
+          <a href="{{route('photos')}}" class="nav-link">Fotos</a>
+        </li> --}}
+
         <li class="nav-item">
           <a href="{{route('courses')}}" class="nav-link">Campus</a>
         </li>

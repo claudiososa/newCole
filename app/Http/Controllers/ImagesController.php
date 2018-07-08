@@ -12,15 +12,16 @@ use Illuminate\Support\Facades\Storage;
 
 class ImagesController extends Controller
 {
+
   public function getForm($id)
-{
-  $album = Album::find($id);
-  return view('admin.addImage',[
-    'album'=>$album
-  ]);
-  // return View::make('addimage')
-  // ->with('album',$album);
-}
+  {
+    $album = Album::find($id);
+    return view('admin.addImage',[
+      'album'=>$album
+    ]);
+    // return View::make('addimage')
+    // ->with('album',$album);
+  }
 
 public function postAdd()
 {
