@@ -8,7 +8,8 @@
 
       <!-- logo -->
       <div id="logo-mobile" class="logo">
-        <a href="index.html"><img id="logo-img-mobile" src="{{asset('images/logo_light_blue.png')}}" alt="The Project"></a>
+        <a href="{{route('welcome')}}"><img id="logo_img" src="{{asset('images/logo.jpg')}}" alt="Copef Salta"></a>
+        {{-- <a href="index.html"><img id="logo-img-mobile" src="{{asset('images/logo_light_blue.png')}}" alt="The Project"></a> --}}
       </div>
 
       <!-- name-and-slogan -->

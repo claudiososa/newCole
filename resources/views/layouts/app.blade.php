@@ -146,7 +146,7 @@
 
                   <!-- logo -->
                   <div id="logo" class="logo">
-                    <a href="{{route('welcome')}}"><img id="logo_img" src="{{asset('images/logo.jpg')}}" alt="The Project"></a>
+                    <a href="{{route('welcome')}}"><img id="logo_img" src="{{asset('images/logo.jpg')}}" alt="Copef Salta"></a>
                   </div>
 
                   <!-- name-and-slogan -->
