@@ -169,7 +169,7 @@
 
           <!-- slide 2 start -->
           <!-- ================ -->
-          <li data-transition="random" data-slotamount="7" data-masterspeed="default" data-title="Premium HTML5 Bootstrap Theme">
+          <li data-transition="random" data-slotamount="7" data-masterspeed="default" data-title="Nuevo Sitio Web Copef Salta">
 
             <!-- main image -->
             <img src="{{asset('images/slider/slider2.jpg')}}" alt="slidebg2" data-bgposition="center center" data-bgrepeat="no-repeat" data-bgfit="cover" class="rev-slidebg">
@@ -195,7 +195,7 @@
               data-transform_in="y:[100%];sX:1;sY:1;o:0;s:1100;e:Power4.easeInOut;"
               data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;"
               data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="logo-font">Copef Salta</span> <br> Premium HTML5 Bootstrap Theme
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="logo-font">Copef Salta</span> <br> Nuevo Sitio Web Copef Salta
             </div>
 
             <!-- LAYER NR. 2 -->
@@ -208,7 +208,7 @@
               data-transform_in="y:[100%];sX:1;sY:1;o:0;s:900;e:Power4.easeInOut;"
               data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;"
               data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="icon default-bg circle small hidden-xs"><i class="fa fa-laptop"></i></span> 100% Responsive
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="icon default-bg circle small hidden-xs"><i class="fa fa-laptop"></i></span> Nuevo diseño
             </div>
 
             <!-- LAYER NR. 3 -->
@@ -221,7 +221,7 @@
               data-transform_in="y:[100%];sX:1;sY:1;o:0;s:900;e:Power4.easeInOut;"
               data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;"
               data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="icon default-bg circle small hidden-xs"><i class="fa fa-check"></i></span> Bootstrap Based
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="icon default-bg circle small hidden-xs"><i class="fa fa-check"></i></span> Adaptable a dipositivos moviles
             </div>
 
             <!-- LAYER NR. 4 -->
@@ -234,7 +234,7 @@
               data-transform_in="y:[100%];sX:1;sY:1;o:0;s:900;e:Power4.easeInOut;"
               data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;"
               data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="icon default-bg circle small hidden-xs"><i class="fa fa-gift"></i></span> Packed Full of Features
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="icon default-bg circle small hidden-xs"><i class="fa fa-gift"></i></span> Contenido exclusivo
             </div>
 
             <!-- LAYER NR. 5 -->
@@ -247,11 +247,11 @@
               data-transform_in="y:[100%];sX:1;sY:1;o:0;s:900;e:Power4.easeInOut;"
               data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;"
               data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="icon default-bg circle small hidden-xs"><i class="fa fa-hourglass-half"></i></span> Very Elegant Design
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><span class="icon default-bg circle small hidden-xs"><i class="fa fa-hourglass-half"></i></span> Galería de fotos
             </div>
 
             <!-- LAYER NR. 6 -->
-            <div class="tp-caption small_white"
+            {{-- <div class="tp-caption small_white"
               data-x="left"
               data-y="490"
               data-speed="500"
@@ -261,7 +261,7 @@
               data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;"
               data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
               data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"><a href="#" class="btn btn-default btn-lg btn-animated">Purchase <i class="fa fa-cart-arrow-down"></i></a>
-            </div>
+            </div> --}}
           </li>
           <!-- slide 2 end -->
         </ul>
