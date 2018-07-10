@@ -26,6 +26,10 @@ class NavController extends Controller
       ]);
     }
 
+    public function contact(){
+      return view('contact');
+    }
+
     public function news()
     {
       $publications = Publication::where('id','>',0)

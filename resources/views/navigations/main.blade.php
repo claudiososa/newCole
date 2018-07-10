@@ -13,9 +13,9 @@
       </div>
 
       <!-- name-and-slogan -->
-      <div class="site-slogan">
+      {{-- <div class="site-slogan">
         Inspiración, Innovación
-      </div>
+      </div> --}}
 
     </div>
 
@@ -76,7 +76,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="{{route('courses')}}" class="nav-link">Contactenos</a>
+          <a href="{{route('contact')}}" class="nav-link">Contactenos</a>
         </li>
 
       </ul>
