@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Copef Salta | Inicio</title>
-    <meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
+    <meta name="description" content="Sitio Web oficial - Copef Salta">
     <meta name="author" content="author">
 
     <!-- Mobile Meta -->
