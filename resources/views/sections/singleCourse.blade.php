@@ -32,12 +32,14 @@
           <header>
             <div class="post-info mb-4">
               <span class="post-date">
-                <i class="fa fa-calendar-o pr-1"></i>
-                <span class="day">12</span>
-                <span class="month">May 2017</span>
+                <span class="day">{{ucwords($post->created_at->format('l'))}}
+                  {{$post->created_at->format('d')}}
+                  {{ucwords($post->created_at->format('F '))}}de
+                  {{ucwords($post->created_at->format(' Y'))}}
+                </span>
               </span>
-              <span class="submitted"><i class="fa fa-user pr-1 pl-1"></i> by <a href="#">John Doe</a></span>
-              <span class="comments"><i class="fa fa-comments-o pl-1 pr-1"></i> <a href="#">22 comments</a></span>
+              {{-- <span class="submitted"><i class="fa fa-user pr-1 pl-1"></i> by <a href="#">John Doe</a></span>
+              <span class="comments"><i class="fa fa-comments-o pl-1 pr-1"></i> <a href="#">22 comments</a></span> --}}
             </div>
           </header>
           <div class="blogpost-content">

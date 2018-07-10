@@ -52,9 +52,9 @@
         <li class="nav-item dropdown ">
           <a href="portfolio-grid-2-3-col.html" class="nav-link dropdown-toggle" id="fifth-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Institucional</a>
           <ul class="dropdown-menu" aria-labelledby="fifth-dropdown">
-            <li ><a href="{{route('pagina',['id' => 28])}}">Historia</a></li>
+            <li ><a href="{{route('pagina',['id' => 1])}}">Historia</a></li>
             <li ><a href="{{route('directivas')}}">Comisión Directiva</a></li>
-            <li ><a href="{{route('pagina',['id' => 30])}}">Matrícula</a></li>
+            <li ><a href="{{route('pagina',['id' => 2])}}">Matrícula</a></li>
             <li ><a href="{{route('photos')}}" >Galería de fotos</a></li>
           </ul>
         </li>

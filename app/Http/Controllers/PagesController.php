@@ -67,12 +67,19 @@ class PagesController extends Controller
   public function singleNew(Publication $publication)
   {
     //dd($publication);
+    //$publication->album_id
     $publications = Publication::where('id','>',0)->where('statusNew','publicado')->orderBy('id','DESC')->take(3)->get();
+    $albums = Album::where('id','=',$publication->album_id)->with('Photos')->get();
+
+    //$albums = Album::where('id','>','1')->with('Photos')->paginate(3);
+//    dd($album);
+
     $categories = Category::all();
     return view('singleNew',[
       'publications' =>$publications,
       'post'=>$publication,
-      'categories'=>$categories
+      'categories'=>$categories,
+      'albums' => $albums
     ]);
   }
 

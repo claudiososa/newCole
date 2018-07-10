@@ -46,8 +46,8 @@
                   {{ucwords($publication->created_at->format(' Y'))}}
                 </span>
               </span>
-              <span class="submitted"><i class="fa fa-user pr-1 pl-1"></i> by <a href="#">John Doe</a></span>
-              <span class="comments"><i class="fa fa-comments-o pl-1 pr-1"></i> <a href="#">22 comments</a></span>
+              {{-- <span class="submitted"><i class="fa fa-user pr-1 pl-1"></i> by <a href="#">John Doe</a></span>
+              <span class="comments"><i class="fa fa-comments-o pl-1 pr-1"></i> <a href="#">22 comments</a></span> --}}
             </div>
           </header>
           <div class="blogpost-content">
@@ -144,7 +144,7 @@
               </div>
             </div>
             <hr>
-                    
+
             <div class="text-right space-top">
               <a href="blog-large-image-right-sidebar.html" class="link-dark"><i class="fa fa-plus-circle pl-1 pr-1"></i>More</a>
             </div>

@@ -23,7 +23,7 @@
 
         <!-- page-title start -->
         <!-- ================ -->
-        <h3 class="my-4"><a href="{{route('curso', ['id' => $post->id])}}">{{$post->title}}</a></h3>
+        <h3 class="my-4"><a href="{{route('noticia', ['id' => $post->id])}}">{{$post->title}}</a></h3>
         <!-- page-title end -->
 
         <!-- blogpost start -->
@@ -32,12 +32,14 @@
           <header>
             <div class="post-info mb-4">
               <span class="post-date">
-                <i class="fa fa-calendar-o pr-1"></i>
-                <span class="day">12</span>
-                <span class="month">May 2017</span>
+                <span class="day">{{ucwords($post->created_at->format('l'))}}
+                  {{$post->created_at->format('d')}}
+                  {{ucwords($post->created_at->format('F '))}}de
+                  {{ucwords($post->created_at->format(' Y'))}}
+                </span>
               </span>
-              <span class="submitted"><i class="fa fa-user pr-1 pl-1"></i> by <a href="#">John Doe</a></span>
-              <span class="comments"><i class="fa fa-comments-o pl-1 pr-1"></i> <a href="#">22 comments</a></span>
+              {{-- <span class="submitted"><i class="fa fa-user pr-1 pl-1"></i> by <a href="#">John Doe</a></span>
+              <span class="comments"><i class="fa fa-comments-o pl-1 pr-1"></i> <a href="#">22 comments</a></span> --}}
             </div>
           </header>
           <div class="blogpost-content">
@@ -50,6 +52,37 @@
               </div>
 
             <p><?php echo $post->content ?></p>
+            <p>Imágenes</p>
+            @foreach ($albums as $album)
+            <div class="row">
+                    @foreach($album->Photos as $photo)
+                      <div class="col-lg-6">
+                        <div class="thumbnail">
+                          {{-- <p>Fecha de creación:  {{ date("d F Y",strtotime($photo->created_at)) }}at {{ date("g:ha",strtotime($photo->created_at)) }}</p> --}}
+                          <img  alt="{{$album->name}}" src="{{Storage::disk('public')->url($photo->imageLittle)}}">
+                          <div class="caption">
+                            {{-- <p>{{$photo->description}}</p> --}}
+
+                            {{-- <a href="{{route('deleteImage',['id'=>$photo->id])}}" onclick="returnconfirm('Are you sure?')"><button type="button"class="btn btn-danger btn-small">Borrar imagen</button></a> --}}
+                            {{-- <p>Move image to another Album :</p> --}}
+                            {{-- <form name="movephoto" method="POST"action="{{URL::route('move_image')}}">
+                              {{csrf_field()}}
+                              <select name="new_album">
+                                @foreach($albums as $others)
+                                  <option value="{{$others->id}}">{{$others->name}}</option>
+                                @endforeach
+                              </select>
+                              <input type="hidden" name="photo"value="{{$photo->id}}" />
+                              <button type="submit" class="btn btn-smallbtn-info" onclick="return confirm('Are you sure?')">Move Image</button>
+                            </form> --}}
+                          </div>
+                        </div>
+                        <hr>
+                      </div>
+
+                    @endforeach
+            </div>
+            @endforeach
           </div>
           <footer class="clearfix">
             <div class="tags pull-left"><i class="fa fa-tags pr-1"></i> <a href="#">tag 1</a>, <a href="#">tag 2</a>, <a href="#">long tag 3</a></div>
