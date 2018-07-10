@@ -14,7 +14,7 @@
           <span class="icon default-bg circle"><i class="fa fa-diamond"></i></span>
           <h3>Cursos de formación</h3>
           <div class="separator clearfix"></div>
-          <p>Voluptatem ad provident non repudiandae beatae cupiditate amet reiciendis lorem ipsum dolor sit amet, consectetur.</p>
+          <p>Creemos en una formación permanente, para mejorar como profesionales y tener mas opotunidades laborales.</p>
           <a href="{{route('courses')}}">Leer más <i class="pl-1 fa fa-angle-double-right"></i></a>
         </div>
       </div>
@@ -23,7 +23,7 @@
           <span class="icon default-bg circle"><i class="fa fa-connectdevelop"></i></span>
           <h3>Últimas Noticias</h3>
           <div class="separator clearfix"></div>
-          <p>Iure sequi unde hic. Sapiente quaerat sequi inventore veritatis cumque lorem ipsum dolor sit amet, consectetur.</p>
+          <p>Estar informado es importante. Ahora puedes estar informad@ con las últimas noticias de Copef Salta te brinda</p>
           <a href="{{route('news')}}">Leer más <i class="pl-1 fa fa-angle-double-right"></i></a>
         </div>
       </div>
@@ -32,7 +32,7 @@
           <span class="icon default-bg circle"><i class="fa fa fa-snowflake-o"></i></span>
           <h3>Contenido exclusivo</h3>
           <div class="separator clearfix"></div>
-          <p>Inventore dolores aut laboriosam cum consequuntur delectus sequi lorem ipsum dolor sit amet, consectetur.</p>
+          <p>Este sección es de contenido exclusivo para profesionales matriculados, debes ingresar con tu usuario y contraseña</p>
           <a href="{{route('exclusive')}}">Leer más <i class="pl-1 fa fa-angle-double-right"></i></a>
         </div>
       </div>
