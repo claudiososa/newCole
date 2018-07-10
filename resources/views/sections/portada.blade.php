@@ -55,7 +55,7 @@
             </div>
             <div class="col-lg-4">
               <br>
-              <p><a href="#" class="btn btn-lg btn-gray-transparent btn-animated">Imprimir ahora<i class="fa fa-arrow-right pl-20"></i></a></p>
+              <p><a href="http://copefsalta.com.ar/constancia/" class="btn btn-lg btn-gray-transparent btn-animated">Imprimir ahora<i class="fa fa-arrow-right pl-20"></i></a></p>
             </div>
           </div>
         </div>
