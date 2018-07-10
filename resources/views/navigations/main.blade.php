@@ -72,7 +72,7 @@
         </li> --}}
 
         <li class="nav-item">
-          <a href="{{route('courses')}}" class="nav-link">Campus</a>
+          <a href="http://campus.copefsalta.com.ar/" class="nav-link">Campus</a>
         </li>
 
         <li class="nav-item">
