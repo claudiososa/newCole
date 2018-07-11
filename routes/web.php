@@ -50,6 +50,7 @@ Route::get('/inactive',function(){
 
 Route::get('/capacitacion','NavController@courses')->name('courses');
 Route::get('/noticias','NavController@news')->name('news');
+
 Route::get('/contacto','NavController@contact')->name('contact');
 Route::get('/directivas','NavController@directivas')->name('directivas');
 Route::get('/directiva/{publication}','PagesController@singleDirectiva')->name('directiva');

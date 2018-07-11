@@ -48,7 +48,7 @@
                 @foreach ($post->picture as $picture)
                   <img src="{{Storage::disk('public')->url($picture->name)}}" alt="">
                 @endforeach
-                <a class="overlay-link" href="blog-post.html"><i class="fa fa-link"></i></a>
+                {{-- <a class="overlay-link" href="blog-post.html"><i class="fa fa-link"></i></a> --}}
               </div>
 
             <p><?php echo $post->content ?></p>

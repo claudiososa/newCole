@@ -31,9 +31,8 @@
         @forelse ($publications as $publication)
           <div class="overlay-container">
             @foreach ($publication->picture as $picture)
-              <img src="{{Storage::disk('public')->url($picture->name)}}" alt="">
+              <a  href="{{route('noticia', ['id' => $publication->id])}}"><img src="{{Storage::disk('public')->url($picture->name)}}" alt=""></a>
             @endforeach
-            <a class="overlay-link" href="blog-post.html"><i class="fa fa-link"></i></a>
           </div>
           <header>
             <h2><a href="{{route('noticia', ['id' => $publication->id])}}">{{$publication->title}}</a></h2>

@@ -31,9 +31,11 @@
         @forelse ($publications as $publication)
           <div class="overlay-container">
             @foreach ($publication->picture as $picture)
-              <img src="{{Storage::disk('public')->url($picture->name)}}" alt="">
+              <a  href="{{route('curso', ['id' => $publication->id])}}"><img src="{{Storage::disk('public')->url($picture->name)}}" alt=""></a>
+              {{-- <a  href="{{route('courses', ['id' => $publication->id])}}"><img src="{{Storage::disk('public')->url($picture->name)}}" alt=""></a> --}}
+              {{-- <img src="{{Storage::disk('public')->url($picture->name)}}" alt=""> --}}
             @endforeach
-            <a class="overlay-link" href="blog-post.html"><i class="fa fa-link"></i></a>
+            {{-- <a class="overlay-link" href="blog-post.html"><i class="fa fa-link"></i></a> --}}
           </div>
           <header>
             <h2><a href="{{route('curso', ['id' => $publication->id])}}">{{$publication->title}}</a></h2>
