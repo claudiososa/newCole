@@ -146,7 +146,7 @@
 
                   <!-- logo -->
                   <div id="logo" class="logo">
-                    <a href="{{route('welcome')}}"><img id="logo_img" src="{{asset('images/logo.jpg')}}" alt="Copef Salta"></a>
+                    <a href="{{route('welcome')}}"><img id="logo_img" src="{{asset('images/logo.png')}}" alt="Copef Salta"></a>
                   </div>
 
                   <!-- name-and-slogan -->
@@ -219,7 +219,7 @@
               <div class="row">
                 <div class="col-lg-3">
                   <div class="footer-content">
-                    <div class="logo-footer"><img id="logo-footer" src="{{asset('images/logo.jpg')}}" alt=""></div>
+                    <div class="logo-footer"><img id="logo-footer" src="{{asset('images/logo.png')}}" alt=""></div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus illo vel dolorum soluta consectetur doloribus sit. Delectus non tenetur odit dicta vitae debitis suscipit doloribus. Ipsa, aut voluptas quaerat... <a href="page-about.html">Learn More<i class="fa fa-long-arrow-right pl-1"></i></a></p>
                     <div class="separator-2"></div>
                     <nav>

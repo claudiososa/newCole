@@ -40,7 +40,7 @@
                 <div class="sidebar-inner content-scroll">
 
                     <div class="logo-header">
-                        <a href="index.html"><img src="images/logo.jpg" alt=""></a>
+                        <a href="index.html"><img src="images/logo.png" alt=""></a>
                     </div><!--logo-->
                     <ul class="metismenu" id="menu">
                         <li class="nav-heading">
