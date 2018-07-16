@@ -24,12 +24,12 @@ class CreatePublicationRequest extends FormRequest
     public function rules()
     {
         return [
-          'input-img'=>['required'],
+        //  'input-img'=>['required'],
         ];
     }
 
     public function publications()
     {
-      return ['input-img.required'=>'Debe seleccionar una imagen'];
+      //return ['input-img.required'=>'Debe seleccionar una imagen'];
     }
 }

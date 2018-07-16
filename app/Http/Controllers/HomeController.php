@@ -61,11 +61,18 @@ class HomeController extends Controller
 
       $img = $request->file('input-img');
 
-      $imge = $img->store('images','public');
+      if ($request->file('input-img')) {
+        $imge = $img->store('images','public');
 
-      $name = substr($imge,7,strpos($imge,'.jpeg')-7).'500x281.jpeg';
+        $name = substr($imge,7,strpos($imge,'.jpeg')-7).'500x281.jpeg';
 
-      $imageLittle = Image::make($img)->resize(500, 281)->save('storage/images/'.$name);
+        $imageLittle = Image::make($img)->resize(500, 281)->save('storage/images/'.$name);
+      }else {
+        $imge='images/sinFoto.jpg';
+      }
+
+
+
       //$imageLittle = Image::make(Input::file('image'))->resize(500, 281)->save('storage/images/'.$name);
 
       $image = Picture::create([
@@ -130,18 +137,40 @@ class HomeController extends Controller
 
       $publication->save();
       //dd($publication);
+
+
       $img = $request->file('input-img');
 
-      if ($img<>null) {
-        //$img = $request->file('input-img');
-        //dd($publication);
-        $image = Image::where('publication_id','=',$publication->id)->first();
-        //dd($image);
-        //$image->id=$publication->id;
-        $image->name=$img->store('images','public');
-        $image->save();
+      if ($request->file('input-img')) {
 
+        $findPicture = Picture::where('publication_id',$request->input('publication_id'))->first()->delete();
+
+
+        $imge = $img->store('images','public');
+
+        $name = substr($imge,7,strpos($imge,'.jpeg')-7).'500x281.jpeg';
+
+        $imageLittle = Image::make($img)->resize(500, 281)->save('storage/images/'.$name);
+
+        $image = Picture::create([
+          'publication_id'=>$publication->id,
+          'name' =>$imge,
+          'type'=>'n'
+        ]);
       }
+
+
+
+      // if ($img<>null) {
+      //   //$img = $request->file('input-img');
+      //   //dd($publication);
+      //   $image = Image::where('publication_id','=',$publication->id)->first();
+      //   //dd($image);
+      //   //$image->id=$publication->id;
+      //   $image->name=$img->store('images','public');
+      //   $image->save();
+      //
+      // }
 
       return redirect('home');
     }
