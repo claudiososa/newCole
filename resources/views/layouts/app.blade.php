@@ -3,8 +3,8 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Copef Salta | Inicio</title>
-    <meta name="description" content="Sitio Web oficial - Copef Salta">
+    <title>Colegio 5159 | Inicio</title>
+    <meta name="description" content="Sitio Web oficial - Colegio Secundario 5159">
     <meta name="author" content="author">
 
     <!-- Mobile Meta -->
@@ -42,7 +42,7 @@
     <!-- Use css/rtl_typography-default.css for RTL version -->
     <link href="{{asset('css/typography-default.css')}}" rel="stylesheet" >
     <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer) -->
-    <link href="{{asset('css/skins/red.css')}}" rel="stylesheet">
+    <link href="{{asset('css/skins/dark_cyan.css')}}" rel="stylesheet">
 
     <!-- Custom css -->
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
@@ -72,7 +72,7 @@
         <!-- "dark": dark version of header top e.g. class="header-top dark" -->
         <!-- "colored": colored version of header top e.g. class="header-top colored" -->
         <!-- ================ -->
-        <div class="header-top ">
+        <div class="header-top">
           <div class="container">
             <div class="row">
               <div class="col-3 col-sm-6 col-lg-9">
@@ -97,9 +97,9 @@
                     </div>
                   </div>
                   <ul class="list-inline hidden-md-down">
-                    <li class="list-inline-item"><i class="fa fa-map-marker pr-1 pl-2"></i>Calle O'higgins 1.550, Oficina 3</li>
+                    <li class="list-inline-item"><i class="fa fa-map-marker pr-1 pl-2"></i>Av. Hipodromo de San Isidro 750</li>
                     <li class="list-inline-item"><i class="fa fa-phone pr-1 pl-2"></i>+54-387-4214450</li>
-                    <li class="list-inline-item"><i class="fa fa-envelope-o pr-1 pl-2"></i> copefsalta@gmail.com</li>
+                    <li class="list-inline-item"><i class="fa fa-envelope-o pr-1 pl-2"></i> colegio5159@gmail.com</li>
                   </ul>
                 </div>
                 <!-- header-top-first end -->
